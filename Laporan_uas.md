@@ -1,3 +1,4 @@
+<img width="549" height="393" alt="image" src="https://github.com/user-attachments/assets/85da388b-aa75-43aa-a160-8523ab83c81d" />
 # LAPORAN UAS KECERDASAN BUATAN
 
 ## 1. Judul Proyek
