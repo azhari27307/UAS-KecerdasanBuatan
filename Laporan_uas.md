@@ -53,3 +53,105 @@ Dataset ini merekam berbagai parameter kimia dan fisik, di antaranya:
 **Tipe Data dan Target Klasifikasi:**
 * **Tipe Data:** Seluruh fitur prediktor berjenis numerik bertipe *float* atau angka desimal.
 * **Target Klasifikasi:** Atribut target klasifikasinya adalah **Potability** yang berisi nilai biner, yaitu `1` (Layak Minum) dan `0` (Tidak Layak Minum).
+
+## 4. Exploratory Data Analysis (EDA)
+
+**Visualisasi Distribusi Data:**
+Berdasarkan pengecekan distribusi pada target `Potability`, ditemukan adanya ketidakseimbangan kelas. Jumlah sampel air dengan kategori `0` (Tidak Layak) lebih dominan dibandingkan dengan kategori `1` (Layak).
+
+**Analisis Korelasi Antar Fitur:**
+Berdasarkan visualisasi matriks korelasi, hampir seluruh parameter kimia air menunjukkan nilai korelasi linier yang sangat lemah (mendekati 0). Nilai korelasi paling menonjol hanya berada pada angka -0.17 antara fitur Solids dan Sulfate. Hal ini menandakan tidak terjadinya multikolinearitas antar variabel prediktor.
+
+**Deteksi Data Tidak Seimbang:**
+Ketimpangan proporsi pada variabel target menunjukkan bahwa dataset ini termasuk dalam kategori data tidak seimbang. Hal ini berpotensi membuat model pembelajaran mesin lebih mudah mengenali kelas mayoritas.
+
+**Insight Awal dari Pola Data:**
+Ketiadaan korelasi yang kuat antar parameter kimia menunjukkan bahwa setiap fitur berdiri sendiri dan memberikan informasi yang unik. Oleh karena itu, seluruh fitur (9 kolom) layak dipertahankan untuk fase pemodelan tanpa perlu ada pemangkasan dimensi. Selain itu, perlu diwaspadai bahwa ketidakseimbangan target kelas berisiko menghasilkan akurasi yang bias terhadap kelas dominan.
+
+## 5. Data Preparation
+
+**Pembersihan Data:**
+Proses penanganan data kosong (*null value*) dilakukan menggunakan teknik imputasi. Berdasarkan identifikasi awal, terdapat nilai kosong pada kolom `ph`, `Sulfate`, dan `Trihalomethanes`. Nilai-nilai kosong tersebut diisi menggunakan nilai rata-rata (*mean*) dari masing-masing kolom terkait untuk mempertahankan keutuhan jumlah baris data.
+
+**Encoding Data Kategorik:**
+Tahap *encoding* (seperti *label encoding* atau *one-hot encoding*) tidak diterapkan pada proyek ini karena seluruh sembilan fitur parameter kualitas air di dalam dataset sudah berekstensi numerik (*float*).
+
+**Normalisasi / Standardisasi Data Numerik:**
+Seluruh fitur numerik distandarisasi menggunakan fungsi `StandardScaler`. Proses penyamaan skala angka ini sangat esensial karena kita menggunakan algoritma K-Nearest Neighbors (KNN) yang menghitung metrik jarak antar titik data. Tanpa standarisasi, fitur dengan rentang angka yang besar (seperti `Solids` atau `Sulfate`) akan mendominasi perhitungan model.
+
+**Split Data (Train-Test):**
+Dataset dipisahkan ke dalam variabel fitur prediktor (X) dan variabel target (y), kemudian dibagi dengan rasio **80:20** menggunakan *random state*. Berdasarkan hasil eksekusi pemisahan data, diperoleh:
+*   Jumlah data latih (*training*): 2620 sampel
+*   Jumlah data uji (*testing*): 656 sampel
+
+## 6. Modeling
+
+**Pemilihan Algoritma:**
+Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yaitu:
+1. Decision Tree (Pohon Keputusan)
+2. K-Nearest Neighbors (KNN)
+
+**Alasan Pemilihan 2 Algoritma:**
+*   **Decision Tree:** Dipilih karena algoritma ini memiliki keunggulan dalam transparansi dan kemudahan interpretasi. Hasil dari Decision Tree dapat divisualisasikan dalam bentuk struktur hierarki (pohon) bersyarat, sehingga alur pengambilan keputusan klasifikasi air kelayakan dapat dibaca dengan mudah.
+*   **K-Nearest Neighbors (KNN):** Dipilih sebagai algoritma pembanding karena KNN sangat handal dalam menangani dataset yang sepenuhnya berisi fitur numerik. Pendekatan berbasis perhitungan jarak proksimal antar titik data ini sangat ideal diuji setelah dataset melalui tahap standarisasi.
+
+**Implementasi Model:**
+Implementasi dilakukan menggunakan pustaka `scikit-learn` melalui bahasa pemrograman Python:
+*   Model Decision Tree dibangun menggunakan kelas `DecisionTreeClassifier` dengan membatasi kedalaman maksimum pohon (`max_depth=4`) untuk menjaga agar model tidak *overfitting* serta hasil visualisasinya tetap mudah dibaca.
+*   Model KNN dibangun menggunakan kelas `KNeighborsClassifier` dengan konfigurasi tetangga terdekat sebanyak 5 (`n_neighbors=5`).
+*(Catatan: Kode implementasi secara utuh terdapat di dalam file `uas_model.ipynb`).*
+
+**Perbandingan Model:**
+Kedua algoritma dilatih menggunakan himpunan data latih yang sama (`X_train_scaled` dan `y_train`). Setelah model mengenali pola data, keduanya diinstruksikan untuk memprediksi kelayakan air pada himpunan data uji (`X_test_scaled`) agar komparasinya berjalan secara adil.
+
+**Visualisasi Model:**
+Visualisasi bentuk percabangan dari algoritma Decision Tree telah berhasil di-*render* (menggunakan plot_tree). Grafik pohon keputusan menampilkan titik-titik pemisahan (node) seperti pada kondisi kandungan `Sulfate <= -2.11`, `pH <= -0.676`, dan batas impuritas (gini), yang bermuara pada keputusan akhir di setiap daun (*leaf*) untuk kelas 'Layak' atau 'Tidak Layak'.
+
+## 7. Evaluation
+
+**Confusion Matrix:**
+Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi sebagai berikut:
+*   **Decision Tree:** Model ini mampu mengklasifikasikan 340 sampel sebagai 'Tidak Layak' (True Negative) dengan tepat, namun memiliki 169 kesalahan klasifikasi pada sampel 'Layak' (False Negative).
+*   **K-Nearest Neighbors (KNN):** Model ini mampu mengklasifikasikan 310 sampel sebagai 'Tidak Layak' (True Negative), dengan jumlah prediksi positif yang lebih seimbang dibandingkan Decision Tree.
+
+**Metrik Evaluasi:**
+*   **Decision Tree:**
+    *   Accuracy: 63.26%
+    *   Precision: 51.02%
+    *   Recall: 30.74%
+    *   F1-Score: 38.36%
+*   **K-Nearest Neighbors (KNN):**
+    *   Accuracy: 62.80%
+    *   Precision: 50.00%
+    *   Recall: 41.80%
+    *   F1-Score: 45.54%
+
+**Analisis Hasil:**
+Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
+
+## 8. Kesimpulan dan Rekomendasi
+
+**Ringkasan Hasil Modeling dan Evaluasi:**
+Kedua algoritma klasifikasi berhasil diimplementasikan untuk memisahkan sampel air yang aman dan berbahaya dengan kinerja akurasi di atas 62%. Secara umum, model Decision Tree memberikan akurasi keseluruhan yang paling optimal di antara keduanya.
+
+**Apakah Tujuan Proyek Tercapai?**
+Tujuan proyek untuk membangun sistem prediksi awal kualitas air telah tercapai. Sistem sudah mampu membaca parameter kimia dan mengeluarkan prediksi status kelayakannya secara otomatis.
+
+**Kelebihan dan Keterbatasan Model:**
+*   **Kelebihan:** Proses komputasinya sangat cepat dan efisien.
+*   **Keterbatasan:** Akurasi di angka 63% masih tergolong rendah untuk langsung diimplementasikan pada sektor kesehatan krusial tanpa pengawasan ahli. Tingkat metrik Recall yang rendah menunjukkan bahwa model masih cukup sering keliru menilai air yang sebenarnya layak minum menjadi tidak layak.
+
+**Rekomendasi Perbaikan:**
+Untuk pengembangan selanjutnya, disarankan menambah kuantitas sampel dataset untuk mengatasi ketidakseimbangan kelas. Penggunaan algoritma *ensemble* tingkat lanjut seperti Random Forest atau XGBoost, serta penerapan *hyperparameter tuning*, sangat direkomendasikan guna mendongkrak persentase akurasi di masa depan.
+
+## 9. Referensi
+*   [1] [Tulis nama penulis dan judul jurnal pertama di sini - Gaya APA]
+*   [2] [Tulis nama penulis dan judul jurnal kedua di sini - Gaya APA]
+*   [3] [Tulis nama penulis dan judul jurnal ketiga di sini - Gaya APA]
+*   [4] [Tulis nama penulis dan judul jurnal keempat di sini - Gaya APA]
+*   [5] [Tulis nama penulis dan judul jurnal kelima di sini - Gaya APA]
+
+## 10. Lampiran (Opsional)
+*   File data asli dan jurnal rujukan berada di dalam folder `data/`
+*   File *source code* berada di file `uas_model.ipynb`
+*   *(Kamu bisa menambahkan *screenshot* grafis dari Google Colab di bagian ini jika mau)*
