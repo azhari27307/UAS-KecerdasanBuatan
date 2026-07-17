@@ -111,6 +111,9 @@ Dataset dipisahkan ke dalam variabel fitur prediktor (X) dan variabel target (y)
 
 ## 6. Modeling
 
+<img width="2345" height="1205" alt="image" src="https://github.com/user-attachments/assets/f803bbec-2c33-487c-82ab-914d21ea1d3f" />
+
+
 **Pemilihan Algoritma:**
 Berbagai algoritma machine learning telah banyak dibandingkan untuk menyelesaikan permasalahan klasifikasi sehingga pemilihan algoritma yang sesuai menjadi salah satu faktor penting dalam memperoleh performa model yang optimal (Setiawati, 2023).
 Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yaitu:
