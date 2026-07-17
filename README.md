@@ -11,16 +11,12 @@ Algoritma yang digunakan pada proyek ini adalah:
 
 Model dikembangkan menggunakan bahasa pemrograman **Python** dengan pustaka **scikit-learn**.
 
----
-
 ## Anggota Kelompok
 
 | Nama | NIM |
 |------|-----|
 | Azhari Ahmad Fauzani | 2406107 |
 | Luthfi Muhammad Fikri | 2406003 |
-
----
 
 ## Dataset
 
