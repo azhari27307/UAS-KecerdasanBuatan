@@ -79,10 +79,13 @@ Sebelum dilakukan proses pemodelan, dilakukan pemeriksaan terhadap nilai kosong 
 
 **Visualisasi Distribusi Data:**
 Berdasarkan pengecekan distribusi pada target `Potability`, ditemukan adanya ketidakseimbangan kelas. Jumlah sampel air dengan kategori `0` (Tidak Layak) lebih dominan dibandingkan dengan kategori `1` (Layak).
+
 <img width="549" height="393" alt="image" src="https://github.com/user-attachments/assets/dcbec975-bc07-4320-af00-5a97359b0578" />
 
 **Analisis Korelasi Antar Fitur:**
 Berdasarkan visualisasi matriks korelasi, hampir seluruh parameter kimia air menunjukkan nilai korelasi linier yang sangat lemah (mendekati 0). Nilai korelasi paling menonjol hanya berada pada angka -0.17 antara fitur Solids dan Sulfate. Hal ini menandakan tidak terjadinya multikolinearitas antar variabel prediktor.
+
+<img width="866" height="783" alt="image" src="https://github.com/user-attachments/assets/92956983-2ad7-4555-a23e-197e200e3130" />
 
 **Deteksi Data Tidak Seimbang:**
 Ketimpangan proporsi pada variabel target menunjukkan bahwa dataset ini termasuk dalam kategori data tidak seimbang. Hal ini berpotensi membuat model pembelajaran mesin lebih mudah mengenali kelas mayoritas.
