@@ -138,6 +138,9 @@ Visualisasi bentuk percabangan dari algoritma Decision Tree telah berhasil di-*r
 ## 7. Evaluation
 
 **Confusion Matrix:**
+
+<img width="1189" height="390" alt="image" src="https://github.com/user-attachments/assets/81201213-bcfb-4938-8e1e-a5afaab67877" />
+
 Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi sebagai berikut:
 *   **Decision Tree:** Model ini mampu mengklasifikasikan 340 sampel sebagai 'Tidak Layak' (True Negative) dengan tepat, namun memiliki 169 kesalahan klasifikasi pada sampel 'Layak' (False Negative).
 *   **K-Nearest Neighbors (KNN):** Model ini mampu mengklasifikasikan 310 sampel sebagai 'Tidak Layak' (True Negative), dengan jumlah prediksi positif yang lebih seimbang dibandingkan Decision Tree.
@@ -153,9 +156,6 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
     *   Precision: 50.00%
     *   Recall: 41.80%
     *   F1-Score: 45.54%
-
-<img width="1189" height="390" alt="image" src="https://github.com/user-attachments/assets/81201213-bcfb-4938-8e1e-a5afaab67877" />
-
 
 **Analisis Hasil:**
 Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
