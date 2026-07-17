@@ -69,6 +69,8 @@ Sebelum dilakukan proses pemodelan, dilakukan pemeriksaan terhadap nilai kosong 
 | Turbidity | 0 |
 | Potability | 0 |
 
+**Tabel Jumlah Data Kosong pada Setiap Fitur**
+
 **Tipe Data dan Target Klasifikasi:**
 * **Tipe Data:** Seluruh fitur prediktor berjenis numerik bertipe *float* atau angka desimal.
 * **Target Klasifikasi:** Atribut target klasifikasinya adalah **Potability** yang berisi nilai biner, yaitu `1` (Layak Minum) dan `0` (Tidak Layak Minum).
@@ -77,6 +79,7 @@ Sebelum dilakukan proses pemodelan, dilakukan pemeriksaan terhadap nilai kosong 
 
 **Visualisasi Distribusi Data:**
 Berdasarkan pengecekan distribusi pada target `Potability`, ditemukan adanya ketidakseimbangan kelas. Jumlah sampel air dengan kategori `0` (Tidak Layak) lebih dominan dibandingkan dengan kategori `1` (Layak).
+<img width="549" height="393" alt="image" src="https://github.com/user-attachments/assets/dcbec975-bc07-4320-af00-5a97359b0578" />
 
 **Analisis Korelasi Antar Fitur:**
 Berdasarkan visualisasi matriks korelasi, hampir seluruh parameter kimia air menunjukkan nilai korelasi linier yang sangat lemah (mendekati 0). Nilai korelasi paling menonjol hanya berada pada angka -0.17 antara fitur Solids dan Sulfate. Hal ini menandakan tidak terjadinya multikolinearitas antar variabel prediktor.
