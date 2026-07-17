@@ -1,4 +1,3 @@
-<img width="549" height="393" alt="image" src="https://github.com/user-attachments/assets/85da388b-aa75-43aa-a160-8523ab83c81d" />
 # LAPORAN UAS KECERDASAN BUATAN
 
 ## 1. Judul Proyek
@@ -53,7 +52,22 @@ Dataset ini merekam berbagai parameter kimia dan fisik, di antaranya:
 
 **Ukuran dan Format Data:**
 * Format Data: CSV 
-* Ukuran Data: Terdiri dari 3276 baris sampel pengujian dan 10 kolom fitur. *(Catatan: Sesuaikan angka 3276 ini dengan jumlah baris persis dari dataset Kaggle yang kamu download nanti).*
+* Ukuran Data: Terdiri dari 3276 baris sampel pengujian dan 10 kolom fitur.
+
+Sebelum dilakukan proses pemodelan, dilakukan pemeriksaan terhadap nilai kosong (*missing value*) pada setiap atribut dataset. Hasil pemeriksaan menunjukkan bahwa terdapat tiga atribut yang memiliki nilai kosong, yaitu **pH** sebanyak **491 data**, **Sulfate** sebanyak **781 data**, dan **Trihalomethanes** sebanyak **162 data**. Sementara itu, atribut lainnya tidak memiliki nilai kosong sehingga hanya ketiga atribut tersebut yang memerlukan proses imputasi pada tahap *data preparation*.
+
+| Fitur | Jumlah Data Kosong |
+|-------|-------------------:|
+| pH | 491 |
+| Hardness | 0 |
+| Solids | 0 |
+| Chloramines | 0 |
+| Sulfate | 781 |
+| Conductivity | 0 |
+| Organic_carbon | 0 |
+| Trihalomethanes | 162 |
+| Turbidity | 0 |
+| Potability | 0 |
 
 **Tipe Data dan Target Klasifikasi:**
 * **Tipe Data:** Seluruh fitur prediktor berjenis numerik bertipe *float* atau angka desimal.
