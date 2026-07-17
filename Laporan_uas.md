@@ -1,21 +1,6 @@
 # LAPORAN UAS KECERDASAN BUATAN
 
 ## 1. Judul Proyek
-**Prediksi Kelayakan Air Minum (Water Potability) Menggunakan Algoritma Klasifikasi**
-
-**Isi:**
-* **Nama Kelompok:** 
-  1. Rhey (NPM: [Isi NPM Kamu])
-  2. [Nama Teman Kelompok] (NPM: [IsSip, keputusan yang bijak! Menunda unggah *file* kode dan folder data memang lebih baik dilakukan di akhir agar tidak perlu bolak-balik revisi *commit* di GitHub.
-
-Sekarang kita fokus ke penyusunan kontennya. Untuk **Bab 1**, dosenmu meminta penulisan Judul Proyek, Nama Kelompok, dan Domain Proyek (Latar Belakang). Aku sudah buatkan draf teksnya menggunakan format *Markdown* agar kamu bisa langsung *copy-paste* ke *file* `Laporan_uas.md` milikmu.
-
-Silakan salin blok teks di bawah ini:
-
-```markdown
-# LAPORAN UAS KECERDASAN BUATAN
-
-## 1. Judul Proyek
 **Prediksi Kelayakan Air Minum (Water Potability) Berdasarkan Parameter Kimia Menggunakan Algoritma Klasifikasi**
 
 **Nama Kelompok:**
