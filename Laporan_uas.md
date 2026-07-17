@@ -111,9 +111,6 @@ Dataset dipisahkan ke dalam variabel fitur prediktor (X) dan variabel target (y)
 
 ## 6. Modeling
 
-<img width="2345" height="1205" alt="image" src="https://github.com/user-attachments/assets/f803bbec-2c33-487c-82ab-914d21ea1d3f" />
-
-
 **Pemilihan Algoritma:**
 Berbagai algoritma machine learning telah banyak dibandingkan untuk menyelesaikan permasalahan klasifikasi sehingga pemilihan algoritma yang sesuai menjadi salah satu faktor penting dalam memperoleh performa model yang optimal (Setiawati, 2023).
 Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yaitu:
@@ -136,6 +133,8 @@ Kedua algoritma dilatih menggunakan himpunan data latih yang sama (`X_train_scal
 **Visualisasi Model:**
 Visualisasi bentuk percabangan dari algoritma Decision Tree telah berhasil di-*render* (menggunakan plot_tree). Grafik pohon keputusan menampilkan titik-titik pemisahan (node) seperti pada kondisi kandungan `Sulfate <= -2.11`, `pH <= -0.676`, dan batas impuritas (gini), yang bermuara pada keputusan akhir di setiap daun (*leaf*) untuk kelas 'Layak' atau 'Tidak Layak'.
 
+<img width="2345" height="1205" alt="image" src="https://github.com/user-attachments/assets/f803bbec-2c33-487c-82ab-914d21ea1d3f" />
+
 ## 7. Evaluation
 
 **Confusion Matrix:**
@@ -154,6 +153,9 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
     *   Precision: 50.00%
     *   Recall: 41.80%
     *   F1-Score: 45.54%
+
+<img width="1189" height="390" alt="image" src="https://github.com/user-attachments/assets/81201213-bcfb-4938-8e1e-a5afaab67877" />
+
 
 **Analisis Hasil:**
 Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
