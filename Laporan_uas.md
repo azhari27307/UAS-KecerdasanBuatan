@@ -30,7 +30,7 @@ Membangun dan membandingkan kinerja model *machine learning* untuk memprediksi s
 **Solusi dan Manfaat Implementasi AI:**
 Solusi yang ditawarkan adalah sebuah sistem penapisan otomatis berbasis klasifikasi data tabular. Manfaat utamanya meliputi efisiensi waktu evaluasi kelayakan air, penghematan alokasi biaya pengujian laboratorium awal, dan kemampuan identifikasi cepat terhadap air yang terkontaminasi untuk mencegah masalah kesehatan di masyarakat.
 
-Pendekatan klasifikasi menggunakan data mining telah banyak digunakan untuk membantu proses pengambilan keputusan terhadap kualitas air sehingga dapat meningkatkan efisiensi proses identifikasi dibandingkan pemeriksaan manual (Palupi, 2025; Fattah, 2024).
+Berbagai penelitian juga menunjukkan bahwa penerapan teknik data mining dan machine learning mampu membantu proses klasifikasi kualitas air berdasarkan parameter yang tersedia sehingga dapat digunakan sebagai alat bantu dalam pengambilan keputusan (Palupi, 2025; Fattah, 2024).
 
 ## 3. Data Understanding
 
@@ -91,6 +91,7 @@ Dataset dipisahkan ke dalam variabel fitur prediktor (X) dan variabel target (y)
 ## 6. Modeling
 
 **Pemilihan Algoritma:**
+Berbagai algoritma machine learning telah banyak dibandingkan untuk menyelesaikan permasalahan klasifikasi sehingga pemilihan algoritma yang sesuai menjadi salah satu faktor penting dalam memperoleh performa model yang optimal (Setiawati, 2023).
 Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yaitu:
 1. Decision Tree (Pohon Keputusan)
 2. K-Nearest Neighbors (KNN)
@@ -132,6 +133,7 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
 
 **Analisis Hasil:**
 Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
+
 Hasil penelitian ini juga menunjukkan kecenderungan yang serupa dengan beberapa penelitian terdahulu bahwa algoritma Decision Tree dan KNN mampu digunakan untuk melakukan klasifikasi kualitas air, meskipun tingkat akurasi sangat dipengaruhi oleh karakteristik dataset yang digunakan (Palupi, 2025; Syarifuddin, 2022).
 
 ## 8. Kesimpulan dan Rekomendasi
@@ -150,7 +152,7 @@ Tujuan proyek untuk membangun sistem prediksi awal kualitas air telah tercapai. 
 Untuk pengembangan selanjutnya, disarankan menambah kuantitas sampel dataset untuk mengatasi ketidakseimbangan kelas. Penggunaan algoritma *ensemble* tingkat lanjut seperti Random Forest atau XGBoost, serta penerapan *hyperparameter tuning*, sangat direkomendasikan guna mendongkrak persentase akurasi di masa depan.
 
 **Kesimpulan:**
-Hasil penelitian ini mendukung berbagai penelitian sebelumnya yang menyatakan bahwa algoritma klasifikasi machine learning dapat dimanfaatkan sebagai alat bantu untuk melakukan prediksi kualitas air secara lebih cepat sebagai pendukung pengambilan keputusan (Palupi, 2025; Fattah, 2024).
+Hasil penelitian ini sejalan dengan penelitian Palupi (2025), Syarifuddin (2022), dan Fattah (2024) yang menunjukkan bahwa algoritma machine learning dapat diterapkan untuk melakukan klasifikasi kualitas air berdasarkan parameter yang tersedia.
 
 ## 9. Referensi
 *   Adhitama, Y., Rosyid, R., & Amalyah. (2017). Analisis kualitas air minum depot isi ulang sebagai indikasi pencemaran melalui pengujian total coli di wilayah Kalibata. Jurnal TechLINK, 1(2), 35–44.
