@@ -28,30 +28,6 @@ Dataset berisi:
 - 9 fitur
 - 1 target (Potability)
 
-## Struktur Repository
-
-```text
-.
-├── Dataset/
-│   └── water_potability.csv
-│
-├── Jurnal/
-│   ├── ...
-│
-├── notebook/
-│   └── uas_model.ipynb
-│
-├── images/
-│   ├── gambar_3_1_missing_value.png
-│   ├── gambar_4_1_distribusi_potability.png
-│   ├── gambar_4_2_heatmap.png
-│   ├── gambar_6_1_decision_tree.png
-│   └── ...
-│
-├── laporan.md
-└── README.md
-```
-
 ## Tahapan Proyek
 
 - Data Understanding
