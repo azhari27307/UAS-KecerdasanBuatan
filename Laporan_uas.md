@@ -162,4 +162,4 @@ Hasil penelitian ini mendukung berbagai penelitian sebelumnya yang menyatakan ba
 ## 10. Lampiran (Opsional)
 *   File data asli dan jurnal rujukan berada di dalam folder `Dataset/`
 *   File *source code* berada di folder notebook
-*   File Pustaka berada di folder Pustaka
+*   File Pustaka berada di folder Jurnal
