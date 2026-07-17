@@ -28,7 +28,7 @@ Model dikembangkan menggunakan bahasa pemrograman **Python** dengan pustaka **sc
 UAS-KecerdasanBuatan/
 ├── README.md
 ├── Laporan_uas.md
-├── UAS_Uji_Kelayakan_Air_Minum.ipynb
+├── uas_model.ipynb
 └── data/
     ├── dataset/
     └── Jurnal/
