@@ -4,9 +4,8 @@
 **Prediksi Kelayakan Air Minum (Water Potability) Berdasarkan Parameter Kimia Menggunakan Algoritma Klasifikasi**
 
 **Nama Kelompok:**
-1. Rhey (NPM: [Isi NPM kamu])
-2. [Nama Teman Sekelompok] (NPM: [Isi NPM temanmu]) 
-*(Hapus nomor 2 jika kamu mengerjakan sendiri)*
+1. Azhari Ahmad Fauzani (NIM: 2406107)
+2. Luthfi Muhammad Fikri (NIM: 2406003) 
 
 **Domain Proyek (Latar Belakang):**
 Akses terhadap air minum yang aman dan bersih adalah kebutuhan dasar manusia dan faktor krusial dalam menjaga kesehatan masyarakat. Secara tradisional, penentuan status kelayakan air (potabilitas) memerlukan pengujian laboratorium yang ekstensif terhadap berbagai parameter kimia dan fisik, seperti tingkat pH, kekerasan air (hardness), kandungan sulfat, trihalometana, dan karbon organik. Proses uji laboratorium ini seringkali memakan waktu, membutuhkan biaya yang tidak sedikit, dan bergantung pada tenaga ahli khusus. 
