@@ -146,7 +146,6 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
 *   **K-Nearest Neighbors (KNN):** Model ini mampu mengklasifikasikan 310 sampel sebagai 'Tidak Layak' (True Negative), dengan jumlah prediksi positif yang lebih seimbang dibandingkan Decision Tree.
 
 **Metrik Evaluasi:**
-### Perbandingan Metrik Evaluasi Model
 
 | Metrik | Decision Tree | K-Nearest Neighbors (KNN) |
 |--------|--------------:|--------------------------:|
@@ -155,7 +154,7 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
 | Recall | 30.74% | **41.80%** |
 | F1-Score | 38.36% | **45.54%** |
 
-**Tabel 7.1 Perbandingan Metrik Evaluasi Model Decision Tree dan K-Nearest Neighbors (KNN)**
+**Tabel Perbandingan Metrik Evaluasi Model Decision Tree dan K-Nearest Neighbors (KNN)**
 
 **Analisis Hasil:**
 Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
