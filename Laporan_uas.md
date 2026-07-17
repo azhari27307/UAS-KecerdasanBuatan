@@ -8,14 +8,16 @@
 2. Luthfi Muhammad Fikri (NIM: 2406003) 
 
 **Domain Proyek (Latar Belakang):**
-Akses terhadap air minum yang aman dan bersih adalah kebutuhan dasar manusia dan faktor krusial dalam menjaga kesehatan masyarakat. Secara tradisional, penentuan status kelayakan air (potabilitas) memerlukan pengujian laboratorium yang ekstensif terhadap berbagai parameter kimia dan fisik, seperti tingkat pH, kekerasan air (hardness), kandungan sulfat, trihalometana, dan karbon organik. Proses uji laboratorium ini seringkali memakan waktu, membutuhkan biaya yang tidak sedikit, dan bergantung pada tenaga ahli khusus. 
+Akses terhadap air minum yang aman dan bersih merupakan kebutuhan dasar manusia yang sangat penting untuk menjaga kesehatan masyarakat. Air yang tidak memenuhi standar kualitas dapat menjadi media penyebaran berbagai penyakit sehingga kualitas air perlu terus dipantau dan dijaga (Adhitama et al., 2017; Palupi, 2025). Penentuan kualitas air pada umumnya dilakukan melalui pengujian parameter fisika, kimia, maupun mikrobiologi di laboratorium. Proses tersebut memerlukan pengujian terhadap berbagai parameter kualitas air sehingga membutuhkan waktu, biaya, serta tenaga ahli untuk memperoleh hasil yang akurat (Adhitama et al., 2017). 
 
-Dengan pesatnya pemanfaatan Kecerdasan Buatan (AI) pada domain kesehatan dan lingkungan, pendekatan *machine learning* menawarkan solusi pendamping yang lebih cepat dan efisien. Proyek ini bertujuan untuk menganalisis dan membangun model klasifikasi yang mampu memprediksi secara otomatis apakah suatu sampel air aman untuk dikonsumsi atau tidak berdasarkan metrik kandungan kimianya. Implementasi sistem klasifikasi ini diharapkan dapat menjadi alat bantu evaluasi awal yang cepat, sehingga risiko penyakit akibat konsumsi air yang tidak memenuhi standar kesehatan dapat dicegah lebih dini.
+Perkembangan teknik machine learning memungkinkan proses klasifikasi kualitas air dilakukan secara otomatis berdasarkan data parameter kualitas air sehingga dapat membantu proses identifikasi awal kondisi air secara lebih cepat dibandingkan pengujian manual (Palupi, 2025; Syarifuddin, 2022; Fattah, 2024).
 
 ## 2. Business Understanding
 
 **Permasalahan Dunia Nyata dan Literatur Review:**
-Akses terhadap air bersih merupakan indikator utama kualitas kesehatan masyarakat. Namun, kualitas sumber air sering terancam oleh pencemaran bahan kimia. Secara tradisional, pengujian kualitas air dilakukan melalui serangkaian proses laboratorium kimia yang kompleks, memakan waktu lama, dan membutuhkan biaya tinggi [1]. Penelitian terdahulu menunjukkan bahwa penerapan algoritma klasifikasi mampu mendeteksi kelayakan air berdasarkan parameter fisika dan kimia dengan tingkat presisi yang baik, sehingga dapat mempercepat proses evaluasi tanpa harus selalu bergantung penuh pada uji laboratorium konvensional [2]. *(Catatan untuk Rhey: Ganti angka di dalam kurung siku dengan nama penulis jurnal yang relevan nanti ya).*
+Akses terhadap air bersih merupakan indikator penting dalam menjaga kesehatan masyarakat. Namun kualitas air dapat mengalami penurunan akibat pencemaran sehingga diperlukan proses pemantauan secara berkala. Pengujian kualitas air secara konvensional masih bergantung pada pemeriksaan laboratorium sehingga membutuhkan waktu dan biaya yang relatif besar (Adhitama et al., 2017).
+
+Berbagai penelitian menunjukkan bahwa algoritma klasifikasi seperti Decision Tree, Naïve Bayes, K-Nearest Neighbor (KNN), maupun Support Vector Machine (SVM) mampu digunakan untuk mengklasifikasikan kualitas air dengan tingkat akurasi yang cukup baik sehingga dapat dimanfaatkan sebagai alat bantu dalam proses evaluasi awal kualitas air (Palupi, 2025; Syarifuddin, 2022; Fattah, 2024).
 
 **Tujuan Proyek:**
 Membangun dan membandingkan kinerja model *machine learning* untuk memprediksi secara akurat apakah suatu sampel air layak minum atau tidak layak minum berdasarkan metrik kandungan kimianya.
@@ -27,6 +29,8 @@ Membangun dan membandingkan kinerja model *machine learning* untuk memprediksi s
 
 **Solusi dan Manfaat Implementasi AI:**
 Solusi yang ditawarkan adalah sebuah sistem penapisan otomatis berbasis klasifikasi data tabular. Manfaat utamanya meliputi efisiensi waktu evaluasi kelayakan air, penghematan alokasi biaya pengujian laboratorium awal, dan kemampuan identifikasi cepat terhadap air yang terkontaminasi untuk mencegah masalah kesehatan di masyarakat.
+
+Pendekatan klasifikasi menggunakan data mining telah banyak digunakan untuk membantu proses pengambilan keputusan terhadap kualitas air sehingga dapat meningkatkan efisiensi proses identifikasi dibandingkan pemeriksaan manual (Palupi, 2025; Fattah, 2024).
 
 ## 3. Data Understanding
 
@@ -92,9 +96,9 @@ Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yai
 2. K-Nearest Neighbors (KNN)
 
 **Alasan Pemilihan 2 Algoritma:**
-*   **Decision Tree:** Dipilih karena algoritma ini memiliki keunggulan dalam transparansi dan kemudahan interpretasi. Hasil dari Decision Tree dapat divisualisasikan dalam bentuk struktur hierarki (pohon) bersyarat, sehingga alur pengambilan keputusan klasifikasi air kelayakan dapat dibaca dengan mudah.
-*   **K-Nearest Neighbors (KNN):** Dipilih sebagai algoritma pembanding karena KNN sangat handal dalam menangani dataset yang sepenuhnya berisi fitur numerik. Pendekatan berbasis perhitungan jarak proksimal antar titik data ini sangat ideal diuji setelah dataset melalui tahap standarisasi.
-
+*   **Decision Tree:** Dipilih karena memiliki kemampuan menghasilkan aturan keputusan yang mudah dipahami dan banyak digunakan dalam penelitian klasifikasi kualitas air dengan tingkat akurasi yang baik (Palupi, 2025).
+*   **K-Nearest Neighbors (KNN):** K-Nearest Neighbor dipilih karena bekerja berdasarkan kedekatan jarak antar data dan telah terbukti mampu digunakan untuk klasifikasi kualitas air menggunakan parameter fisika maupun kimia (Syarifuddin, 2022).
+  
 **Implementasi Model:**
 Implementasi dilakukan menggunakan pustaka `scikit-learn` melalui bahasa pemrograman Python:
 *   Model Decision Tree dibangun menggunakan kelas `DecisionTreeClassifier` dengan membatasi kedalaman maksimum pohon (`max_depth=4`) untuk menjaga agar model tidak *overfitting* serta hasil visualisasinya tetap mudah dibaca.
@@ -128,6 +132,7 @@ Berdasarkan hasil pengujian pada 656 data uji, didapatkan performa klasifikasi s
 
 **Analisis Hasil:**
 Dari perbandingan metrik di atas, model **Decision Tree** unggul dalam tingkat akurasi secara keseluruhan (63.26%) dibandingkan model KNN (62.80%). Namun, jika meninjau dari nilai **Recall** dan **F1-Score**, model **KNN** memberikan performa yang lebih baik dalam mendeteksi sampel air layak minum (kategori positif). Hal ini menunjukkan bahwa Decision Tree sedikit lebih cenderung bias terhadap kelas mayoritas ('Tidak Layak'), sedangkan KNN memberikan hasil klasifikasi yang lebih moderat di antara kedua kelas tersebut.
+Hasil penelitian ini juga menunjukkan kecenderungan yang serupa dengan beberapa penelitian terdahulu bahwa algoritma Decision Tree dan KNN mampu digunakan untuk melakukan klasifikasi kualitas air, meskipun tingkat akurasi sangat dipengaruhi oleh karakteristik dataset yang digunakan (Palupi, 2025; Syarifuddin, 2022).
 
 ## 8. Kesimpulan dan Rekomendasi
 
@@ -144,14 +149,17 @@ Tujuan proyek untuk membangun sistem prediksi awal kualitas air telah tercapai. 
 **Rekomendasi Perbaikan:**
 Untuk pengembangan selanjutnya, disarankan menambah kuantitas sampel dataset untuk mengatasi ketidakseimbangan kelas. Penggunaan algoritma *ensemble* tingkat lanjut seperti Random Forest atau XGBoost, serta penerapan *hyperparameter tuning*, sangat direkomendasikan guna mendongkrak persentase akurasi di masa depan.
 
+**Kesimpulan:**
+Hasil penelitian ini mendukung berbagai penelitian sebelumnya yang menyatakan bahwa algoritma klasifikasi machine learning dapat dimanfaatkan sebagai alat bantu untuk melakukan prediksi kualitas air secara lebih cepat sebagai pendukung pengambilan keputusan (Palupi, 2025; Fattah, 2024).
+
 ## 9. Referensi
-*   [1] [Tulis nama penulis dan judul jurnal pertama di sini - Gaya APA]
-*   [2] [Tulis nama penulis dan judul jurnal kedua di sini - Gaya APA]
-*   [3] [Tulis nama penulis dan judul jurnal ketiga di sini - Gaya APA]
-*   [4] [Tulis nama penulis dan judul jurnal keempat di sini - Gaya APA]
-*   [5] [Tulis nama penulis dan judul jurnal kelima di sini - Gaya APA]
+*   Adhitama, Y., Rosyid, R., & Amalyah. (2017). Analisis kualitas air minum depot isi ulang sebagai indikasi pencemaran melalui pengujian total coli di wilayah Kalibata. Jurnal TechLINK, 1(2), 35–44.
+*   Fattah, N. F. (2024). Penerapan data mining untuk klasifikasi kualitas air dengan algoritma Support Vector Machine pada Dinas Lingkungan Hidup dan Pertanahan Provinsi Sumatera Selatan. Jurnal PROSISKO, 11(2), 145–158.
+*   Palupi, E. S. (2025). Klasifikasi kualitas air bersih di Jakarta menggunakan algoritma Decision Tree dan algoritma Naïve Bayes. JATI (Jurnal Mahasiswa Teknik Informatika), 9(1), 1259–1265.
+*   Setiawati, I. (2023). Komparasi algoritma machine learning dari dataset prediksi analisis butir soal harian siswa. Jurnal Cakrawala Informasi, 3(1), 1–7.
+*   Syarifuddin, M. N. (2022). Klasifikasi kualitas air pada program penyediaan air minum dan sanitasi berbasis masyarakat Desa Semenpinggir dengan metode algoritma K-Nearest Neighbor. Jurnal Multidisciplinary Applications of Quantum Information Science (Al-Mantiq), 2(1), 55–61.
 
 ## 10. Lampiran (Opsional)
-*   File data asli dan jurnal rujukan berada di dalam folder `data/`
-*   File *source code* berada di file `uas_model.ipynb`
-*   *(Kamu bisa menambahkan *screenshot* grafis dari Google Colab di bagian ini jika mau)*
+*   File data asli dan jurnal rujukan berada di dalam folder `Dataset/`
+*   File *source code* berada di folder notebook
+*   File Pustaka berada di folder Pustaka
