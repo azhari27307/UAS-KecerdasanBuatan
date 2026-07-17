@@ -8,7 +8,7 @@
 2. Luthfi Muhammad Fikri (NIM: 2406003) 
 
 **Domain Proyek (Latar Belakang):**
-Akses terhadap air minum yang aman dan bersih merupakan kebutuhan dasar manusia yang sangat penting untuk menjaga kesehatan masyarakat. Air yang tidak memenuhi standar kualitas dapat menjadi media penyebaran berbagai penyakit sehingga kualitas air perlu terus dipantau dan dijaga (Adhitama et al., 2017; Palupi, 2025). Penentuan kualitas air pada umumnya dilakukan melalui pengujian parameter fisika, kimia, maupun mikrobiologi di laboratorium. Proses tersebut memerlukan pengujian terhadap berbagai parameter kualitas air sehingga membutuhkan waktu, biaya, serta tenaga ahli untuk memperoleh hasil yang akurat (Adhitama et al., 2017). 
+Akses terhadap air minum yang aman dan bersih merupakan kebutuhan dasar manusia yang sangat penting untuk menjaga kesehatan masyarakat. Air yang tidak memenuhi standar kualitas dapat menjadi media penyebaran berbagai penyakit sehingga kualitas air perlu terus dipantau dan dijaga (Adhitama et al., 2017; Palupi, 2025). Penentuan kualitas air pada umumnya dilakukan melalui pengujian berbagai parameter kualitas air di laboratorium, baik parameter fisika, kimia, maupun mikrobiologi. Pengujian tersebut memerlukan waktu, biaya, dan tenaga ahli untuk memperoleh hasil yang akurat (Adhitama et al., 2017).
 
 Perkembangan teknik machine learning memungkinkan proses klasifikasi kualitas air dilakukan secara otomatis berdasarkan data parameter kualitas air sehingga dapat membantu proses identifikasi awal kondisi air secara lebih cepat dibandingkan pengujian manual (Palupi, 2025; Syarifuddin, 2022; Fattah, 2024).
 
@@ -30,7 +30,7 @@ Membangun dan membandingkan kinerja model *machine learning* untuk memprediksi s
 **Solusi dan Manfaat Implementasi AI:**
 Solusi yang ditawarkan adalah sebuah sistem penapisan otomatis berbasis klasifikasi data tabular. Manfaat utamanya meliputi efisiensi waktu evaluasi kelayakan air, penghematan alokasi biaya pengujian laboratorium awal, dan kemampuan identifikasi cepat terhadap air yang terkontaminasi untuk mencegah masalah kesehatan di masyarakat.
 
-Berbagai penelitian juga menunjukkan bahwa penerapan teknik data mining dan machine learning mampu membantu proses klasifikasi kualitas air berdasarkan parameter yang tersedia sehingga dapat digunakan sebagai alat bantu dalam pengambilan keputusan (Palupi, 2025; Fattah, 2024).
+Berbagai penelitian juga menunjukkan bahwa penerapan teknik data mining dan machine learning mampu membantu proses klasifikasi kualitas air berdasarkan parameter yang tersedia sehingga dapat menghasilkan prediksi kualitas air secara lebih cepat (Palupi, 2025; Fattah, 2024).
 
 ## 3. Data Understanding
 
@@ -98,7 +98,7 @@ Pada proyek ini, digunakan 2 (dua) algoritma klasifikasi *machine learning*, yai
 
 **Alasan Pemilihan 2 Algoritma:**
 *   **Decision Tree:** Dipilih karena memiliki kemampuan menghasilkan aturan keputusan yang mudah dipahami dan banyak digunakan dalam penelitian klasifikasi kualitas air dengan tingkat akurasi yang baik (Palupi, 2025).
-*   **K-Nearest Neighbors (KNN):** K-Nearest Neighbor dipilih karena bekerja berdasarkan kedekatan jarak antar data dan telah terbukti mampu digunakan untuk klasifikasi kualitas air menggunakan parameter fisika maupun kimia (Syarifuddin, 2022).
+*   **K-Nearest Neighbors (KNN):** K-Nearest Neighbors dipilih karena bekerja berdasarkan kedekatan jarak antar data dan telah terbukti mampu digunakan untuk klasifikasi kualitas air menggunakan parameter fisika maupun kimia (Syarifuddin, 2022).
   
 **Implementasi Model:**
 Implementasi dilakukan menggunakan pustaka `scikit-learn` melalui bahasa pemrograman Python:
